@@ -9,6 +9,8 @@ namespace Assets.Scripts.Object
     public class HouseDoor : ObjectBase
     {
         [SerializeField] private string[] _narationList;
+        [SerializeField] private Vector3 _nextPlayerPosition;
+        [SerializeField] private string _nextMapName;
         int i = 0;
         public override void SetInteraction()
         {
@@ -21,6 +23,7 @@ namespace Assets.Scripts.Object
             {
                 CanvasManager.Instance._textPanel.SetActive(false);
                 CanvasManager.Instance.FadeInOut();
+                MapManager.Instance.LoadMapData(_nextMapName, _nextPlayerPosition);
                 gameObject.SetActive(false);
                 Debug.Log("마녀의 집 안으로 들어가기");
                 i++;

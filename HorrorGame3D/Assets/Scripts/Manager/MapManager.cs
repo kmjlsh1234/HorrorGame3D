@@ -13,7 +13,7 @@ namespace Assets.Scripts.Manager
         [SerializeField] private GameObject _currentMap;
 
         [SerializeField] private Vector3 _newGamePlayerPosition;
-        private GameObject _player;
+        public GameObject _player;
 
         
         protected override void Awake()

@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace Assets.Scripts.Map
 {
-    public class StartMap : MonoBehaviour
+    public class StartMap : MapBase
     {
-        private GameObject _player;
         [Header("Transform Element")]
         [SerializeField] private Transform _playerTrans;
         [SerializeField] private Transform _catTrans;
@@ -16,8 +15,9 @@ namespace Assets.Scripts.Map
         [SerializeField] private GameObject _cat;
         [SerializeField] private GameObject _saw;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             Init();
         }
 

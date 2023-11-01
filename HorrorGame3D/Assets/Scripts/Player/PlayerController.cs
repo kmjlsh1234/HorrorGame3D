@@ -74,8 +74,8 @@ namespace Assets.Scripts.Player
         #region :::: Interaction
         private void Interaction()
         {
-            Debug.DrawRay(transform.position, transform.forward * MaxDistance, Color.green, 0.5f);
-            if(Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
+            Debug.DrawRay(transform.position, transform.forward * 5f * MaxDistance, Color.green, 0.5f);
+            if(Physics.Raycast(transform.position, transform.forward * 5f, out hit, MaxDistance))
             {
                 Debug.Log(hit.transform.gameObject.name);
                 ObjectBase _targetScript = hit.transform.GetComponent<ObjectBase>();
