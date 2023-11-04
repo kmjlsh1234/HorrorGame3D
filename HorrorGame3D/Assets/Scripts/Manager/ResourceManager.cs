@@ -38,7 +38,7 @@ public class ResourceManager : SingletonBase<ResourceManager>
     }
     public AudioClip[] LoadAudioLibrary()
     {
-        string dataPath = "Sounds/";
+        string dataPath = "Sound/";
         AudioClip[] aClips = Resources.LoadAll<AudioClip>(dataPath);
 
         if (aClips != null)

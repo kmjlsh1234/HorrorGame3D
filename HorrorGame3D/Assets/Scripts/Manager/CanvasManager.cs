@@ -16,6 +16,7 @@ namespace Assets.Scripts.Manager
         public TMP_Text _narationText;
         public Image _fadeImg;
 
+        public GameObject _deathPanel;
         public void FadeInOut()
         {
             if(_fadeSequence != null)
@@ -25,6 +26,11 @@ namespace Assets.Scripts.Manager
             _fadeSequence.Append(_fadeImg.DOFade(1f, 0.5f));
             _fadeSequence.Append(_fadeImg.DOFade(0f, 2f));
             _fadeSequence.Play();
+        }
+
+        public void DeathUIShow()
+        {
+            _deathPanel.SetActive(true);
         }
     }
 }

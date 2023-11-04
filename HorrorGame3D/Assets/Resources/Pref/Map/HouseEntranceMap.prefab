@@ -241,7 +241,7 @@ MonoBehaviour:
   - "\uD750\uC74C. \uAF43\uC774 \uCD9C\uAD6C\uB97C \uB9C9\uACE0\uC788\uC5B4\uC11C
     \uBABB \uB098\uAC04\uB2E4\uAD6C?"
   - "\uB4E4\uC5B4\uAC00 \uBCF4\uB294\uAC74 \uC5B4\uB54C?"
-  _nextPlayerPosition: {x: 0, y: 1, z: -6.53}
+  _nextPlayerPosition: {x: 0, y: 0.645, z: -7.85}
   _nextMapName: HouseIn
 --- !u!1001 &2527194033648160229
 PrefabInstance:

@@ -25,7 +25,6 @@ namespace Assets.Scripts.Object
                 string[] _stringList = _nextMap.Split("_");
                 
                 MapManager.Instance.LoadMapData(_stringList[2], _nextPlayerPosition);
-                this.enabled = false;
 
             }
         }       

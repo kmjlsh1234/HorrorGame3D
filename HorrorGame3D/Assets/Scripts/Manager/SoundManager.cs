@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Manager.Base;
+using Assets.Scripts.Common;
+
 namespace Assets.Scripts.Manager
 {
     public class SoundManager : SingletonBase<SoundManager>
@@ -27,6 +29,8 @@ namespace Assets.Scripts.Manager
             {
                 _audioLibrary.Add(aClips[i].name, aClips[i]);
             }
+
+            PlayBGM(BGMName.BGM_Wind);
         }
 
         public AudioClip GetClip(string clipName)
@@ -42,8 +46,10 @@ namespace Assets.Scripts.Manager
             }
         }
 
-        public void PlaySound(string clipName)
+        public void PlaySound(SFXName sfxName)
         {
+            var clipName = sfxName.ToString();
+            Debug.Log("ClipName : " + clipName);
             if (_audioLibrary.TryGetValue(clipName, out AudioClip clip))
                 _aSourceSFX.PlayOneShot(clip);
             else
@@ -51,9 +57,10 @@ namespace Assets.Scripts.Manager
                 Debug.Log("No Audio Clip Found! => " + clipName);
             }
         }
-        public void PlayBGM(string clipName)
+        public void PlayBGM(BGMName bgmName)
         {
             _aSourceBGM.Stop();
+            var clipName = bgmName.ToString();
             if (_audioLibrary.TryGetValue(clipName, out AudioClip clip))
             {
                 _aSourceBGM.clip = clip;
