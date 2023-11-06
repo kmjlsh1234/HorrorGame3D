@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.Scripts.Object;
+using Assets.Scripts.Manager;
 namespace Assets.Scripts.Map
 {
     public class HouseIn : MapBase
@@ -13,6 +14,7 @@ namespace Assets.Scripts.Map
         [SerializeField] private Door _door;
         [SerializeField] private GameObject _hideWall;
         [SerializeField] private Paper _paper;
+        [SerializeField] private PortalDoor _portalDoor;
 
         protected override void Awake()
         {
@@ -24,13 +26,22 @@ namespace Assets.Scripts.Map
         {
             _player = GameObject.FindWithTag("Player");
             _paper.SetMapScript(this);
+            _portalDoor.SetMapScript(this);
         }
 
         public void DoorEvent()
         {
             _door.CloseDoor();
+            _door.gameObject.SetActive(false);
+            _portalDoor.gameObject.SetActive(true);
         }
 
+        public void PortalDoorEnter()
+        {
+            _hideWall.SetActive(true);
+            CanvasManager.Instance.FadeInOut();
+            //MapManager.Instance.LoadMapData();
+        }
 
     }
 }

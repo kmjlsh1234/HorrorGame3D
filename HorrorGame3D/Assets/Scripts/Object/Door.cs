@@ -10,10 +10,10 @@ namespace Assets.Scripts.Object
     {
         private Animator _anim;
         private bool _isOpen;
-
+        [SerializeField] private bool _canOpen;
         private void Awake()
         {
-            _anim = GetComponent<Animator>();
+            _anim = this.transform.parent.GetComponent<Animator>();
         }
 
         public void SetData()
@@ -23,14 +23,17 @@ namespace Assets.Scripts.Object
 
         public override void SetInteraction()
         {
-            
-
-            if (!_isOpen)
-                OpenDoor();
+            if(!_canOpen)
+            {
+                Debug.Log("못 여는 문");
+            }
             else
-                CloseDoor();
-
-
+            {
+                if (!_isOpen)
+                    OpenDoor();
+                else
+                    CloseDoor();
+            }
         }
 
         public void OpenDoor()

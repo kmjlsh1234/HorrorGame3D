@@ -9,7 +9,14 @@ namespace Assets.Scripts.Common
         
         StartMap_TO_HouseEntranceMap,
         StartMap_TO_ExitMap,
-        HouseEntranceMap_TO_StartMap
+        HouseEntranceMap_TO_StartMap,
+        FirstLobbyMap
+    }
+
+    public enum MapType
+    {
+        OutSide,
+        InSide
     }
 
     public enum SFXName
@@ -21,7 +28,8 @@ namespace Assets.Scripts.Common
 
     public enum BGMName
     {
-        BGM_Wind
+        BGM_Wind,
+        BGM_MainHouse
     }
 }
 

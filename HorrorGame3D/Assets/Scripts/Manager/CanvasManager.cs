@@ -5,32 +5,51 @@ using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 using Assets.Scripts.Manager.Base;
+using Assets.Scripts.Object;
+using Assets.Scripts.Player;
 
 namespace Assets.Scripts.Manager
 {
     public class CanvasManager : SingletonBase<CanvasManager>
     {
-        Sequence _fadeSequence;
-
         public GameObject _textPanel;
         public TMP_Text _narationText;
         public Image _fadeImg;
 
         public GameObject _deathPanel;
-        public void FadeInOut()
-        {
-            if(_fadeSequence != null)
-                _fadeSequence.Kill();
+        public ChoosePanel _choosePanel;
 
-            _fadeSequence = DOTween.Sequence();
-            _fadeSequence.Append(_fadeImg.DOFade(1f, 0.5f));
-            _fadeSequence.Append(_fadeImg.DOFade(0f, 2f));
-            _fadeSequence.Play();
+        public PlayerController _playerController;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _playerController = GameObject.FindAnyObjectByType<PlayerController>();
         }
 
+        public void FadeInOut()
+        {
+            StartCoroutine(FadeCoroutine());
+        }
+        
+        IEnumerator FadeCoroutine()
+        {
+            _fadeImg.DOFade(1f, 0.25f);
+            yield return new WaitForSeconds(1.5f);
+            _fadeImg.DOFade(0f, 2f);
+            yield return new WaitForSeconds(2f);
+        }
         public void DeathUIShow()
         {
             _deathPanel.SetActive(true);
+        }
+
+        public void ChoosePanelShow(List<string> _stringList, ObjectBase _baseScript)
+        {
+          
+            _choosePanel.gameObject.SetActive(true);
+            _choosePanel.SetData(_stringList, _baseScript);
+            _playerController.enabled = false;
         }
     }
 }

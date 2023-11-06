@@ -11,6 +11,7 @@ namespace Assets.Scripts.Manager
         public AudioSource _aSourceSFX;
         public AudioSource _aSourceBGM;
 
+        public string _curBGMName = "";
         protected override void Awake()
         {
             base.Awake();
@@ -29,8 +30,6 @@ namespace Assets.Scripts.Manager
             {
                 _audioLibrary.Add(aClips[i].name, aClips[i]);
             }
-
-            PlayBGM(BGMName.BGM_Wind);
         }
 
         public AudioClip GetClip(string clipName)
@@ -70,6 +69,22 @@ namespace Assets.Scripts.Manager
             {
                 Debug.Log("No Audio Clip Found! => " + clipName);
             }
+        }
+
+        public void CheckBGMChange(MapType _mapType)
+        {
+
+            if (_aSourceBGM.clip != null)
+                _curBGMName = _aSourceBGM.clip.name;
+
+            var _nextBGM = _mapType == MapType.InSide ? BGMName.BGM_MainHouse : BGMName.BGM_Wind;
+            var _nextBGMName = _nextBGM.ToString();
+
+            if (_curBGMName == _nextBGMName)
+                return;
+
+            else
+                PlayBGM(_nextBGM);
         }
     }
 }
