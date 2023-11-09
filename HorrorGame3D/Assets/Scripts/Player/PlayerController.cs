@@ -6,8 +6,6 @@ namespace Assets.Scripts.Player
 {
     public class PlayerController : MonoBehaviour
     {
-        
-            
         [Header("PlayerMove&Rotate")]
         [SerializeField] float turnSpeed = 4.0f; // 마우스 회전 속도
         [SerializeField] float _speed;
@@ -24,6 +22,7 @@ namespace Assets.Scripts.Player
         [HideInInspector] public bool _canMove = true;
         [HideInInspector] public bool _canRotate = true;
 
+        [SerializeField] private ObjectBase _curInteractObj = null;
         void Start()
         {
             body = GetComponent<Rigidbody>();           // Rigidbody를 가져온다.
@@ -32,16 +31,9 @@ namespace Assets.Scripts.Player
 
         void Update()
         {
-            if(_canMove)
-                Move();
-
-            if (_canRotate)
-                Rotate();
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Interaction();
-            }
-            
+            if(_canMove) Move();
+            if (_canRotate) Rotate();
+            if (Input.GetKeyDown(KeyCode.Space)) Interaction();
         }
 
         #region :::: PlayerMove
@@ -83,19 +75,37 @@ namespace Assets.Scripts.Player
         #region :::: Interaction
         private void Interaction()
         {
-            Debug.DrawRay(transform.position, transform.forward * MaxDistance, Color.green, 0.5f);
-            if(Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
+            if(_curInteractObj == null)
             {
-                Debug.Log(hit.transform.gameObject.name);
-                ObjectBase _targetScript = hit.transform.GetComponent<ObjectBase>();
-                if(_targetScript != null)
+                Debug.DrawRay(transform.position, transform.forward * MaxDistance, Color.green, 0.5f);
+                if (Physics.Raycast(transform.position, transform.forward, out hit, MaxDistance))
                 {
-                    _targetScript.SetInteraction();
+                    Debug.Log("현재 RayCast Target : " + hit.transform.gameObject.name);
+                    ObjectBase _targetScript = hit.transform.GetComponent<ObjectBase>();
+                    if (_targetScript != null)
+                    {
+                        _curInteractObj = _targetScript;
+                        _targetScript.SetPlayerController(this);
+                        _targetScript.SetInteraction();
+                    }
                 }
-                    
             }
-            
+            else
+                _curInteractObj.SetInteraction();
         }
         #endregion
+
+        public void StartInteraction()
+        {
+            _canMove = false;
+            _canRotate = false;
+        }
+
+        public void FinishInteraction()
+        {
+            _canMove = true;
+            _canRotate = true;
+            _curInteractObj = null;
+        }
     }
 }

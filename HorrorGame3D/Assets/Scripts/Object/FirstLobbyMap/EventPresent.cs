@@ -7,7 +7,7 @@ namespace Assets.Scripts.Object.FirstLobbyMap
 {
     public class EventPresent : ObjectBase
     {
-        [SerializeField] private List<string> _chooseStringList = new List<string>();
+        [SerializeField] private string[] _chooseStringList;
         [SerializeField] private GameObject _teddyBear;
         [SerializeField] private Animator _anim;
 
@@ -18,8 +18,6 @@ namespace Assets.Scripts.Object.FirstLobbyMap
         public override void SetInteraction()
         {
             CanvasManager.Instance.ChoosePanelShow(_chooseStringList, this);
-              
-
         }
 
         public override void ChooseButton()

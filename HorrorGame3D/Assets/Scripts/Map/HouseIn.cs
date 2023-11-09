@@ -24,7 +24,6 @@ namespace Assets.Scripts.Map
 
         private void Init()
         {
-            _player = GameObject.FindWithTag("Player");
             _paper.SetMapScript(this);
             _portalDoor.SetMapScript(this);
         }

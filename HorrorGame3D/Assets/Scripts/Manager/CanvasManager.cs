@@ -44,7 +44,17 @@ namespace Assets.Scripts.Manager
             _deathPanel.SetActive(true);
         }
 
-        public void ChoosePanelShow(List<string> _stringList, ObjectBase _baseScript)
+        public void TextPanelShow()
+        {
+            _textPanel.SetActive(true);
+        }
+
+        public void TextPanelClose()
+        {
+            _textPanel.SetActive(false);
+        }
+
+        public void ChoosePanelShow(string[] _stringList, ObjectBase _baseScript)
         {
           
             _choosePanel.gameObject.SetActive(true);

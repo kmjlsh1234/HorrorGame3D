@@ -24,7 +24,7 @@ public class ChoosePanel : MonoBehaviour
         _noText.GetComponent<Button>().onClick.AddListener(() => OnClickYesButton());
     }
 
-    public void SetData(List<string> _list, ObjectBase _baseScript)
+    public void SetData(string[] _list, ObjectBase _baseScript)
     {
         _infoText.text = _list[0];
         _yesText.text = _list[1];

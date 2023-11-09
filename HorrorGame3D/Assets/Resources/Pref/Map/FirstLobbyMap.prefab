@@ -1642,7 +1642,7 @@ GameObject:
   - component: {fileID: 6581500391098666930}
   - component: {fileID: 5084743855932097580}
   - component: {fileID: 2373178247424739578}
-  - component: {fileID: 5541156176437049984}
+  - component: {fileID: 8666756625984923728}
   m_Layer: 0
   m_Name: tabel (1)
   m_TagString: Untagged
@@ -1728,7 +1728,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9449593, y: 2.3959637, z: 4.4599733}
   m_Center: {x: 0.00000017881393, y: 1.2105148, z: 0.00000023841858}
---- !u!114 &5541156176437049984
+--- !u!114 &8666756625984923728
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2402057864217640401}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1473ebf35307414895ce78ff3ec78ac, type: 3}
+  m_Script: {fileID: 11500000, guid: f13433c971a27f945933ec64b300a2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _narationList:
@@ -2610,7 +2610,7 @@ GameObject:
   - component: {fileID: 8970229290465632574}
   - component: {fileID: 1870242404468021378}
   - component: {fileID: 5446486335791767018}
-  - component: {fileID: 5397783336095291242}
+  - component: {fileID: 2853643655340046662}
   m_Layer: 0
   m_Name: Paper
   m_TagString: Untagged
@@ -2696,7 +2696,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5397783336095291242
+--- !u!114 &2853643655340046662
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3914545182458787930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1473ebf35307414895ce78ff3ec78ac, type: 3}
+  m_Script: {fileID: 11500000, guid: f13433c971a27f945933ec64b300a2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _narationList:
