@@ -12,6 +12,12 @@ namespace Assets.Scripts.Object
             _playerController.StartInteraction();
             CanvasManager.Instance.ChoosePanelShow(_chooseList, this);
         }
+
+        public virtual void ChooseButton()
+        {
+            _playerController.FinishInteraction();
+            CanvasManager.Instance.ChoosePanelClose();
+        }
     }
 }
 

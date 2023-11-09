@@ -17,11 +17,6 @@ namespace Assets.Scripts.Object
         {
 
         }
-
-        public virtual void ChooseButton()
-        {
-            _playerController.FinishInteraction();
-        }
     }
 }
 

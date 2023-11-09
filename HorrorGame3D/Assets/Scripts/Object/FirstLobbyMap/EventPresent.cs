@@ -5,9 +5,8 @@ using Assets.Scripts.Manager;
 using Assets.Scripts.Common;
 namespace Assets.Scripts.Object.FirstLobbyMap
 {
-    public class EventPresent : ObjectBase
+    public class EventPresent : ChoosableObject
     {
-        [SerializeField] private string[] _chooseStringList;
         [SerializeField] private GameObject _teddyBear;
         [SerializeField] private Animator _anim;
 
@@ -15,13 +14,10 @@ namespace Assets.Scripts.Object.FirstLobbyMap
         {
             _anim = this.transform.parent.GetComponent<Animator>();
         }
-        public override void SetInteraction()
-        {
-            CanvasManager.Instance.ChoosePanelShow(_chooseStringList, this);
-        }
 
         public override void ChooseButton()
         {
+            base.ChooseButton();
             Debug.Log("∞ıµπ¿Ã »πµÊ!");
             _teddyBear.SetActive(false);
             _anim.SetTrigger("PresentDrop");

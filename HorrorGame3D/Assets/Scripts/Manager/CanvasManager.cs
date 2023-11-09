@@ -7,6 +7,7 @@ using DG.Tweening;
 using Assets.Scripts.Manager.Base;
 using Assets.Scripts.Object;
 using Assets.Scripts.Player;
+using Assets.Scripts.UI;
 
 namespace Assets.Scripts.Manager
 {
@@ -18,7 +19,7 @@ namespace Assets.Scripts.Manager
 
         public GameObject _deathPanel;
         public ChoosePanel _choosePanel;
-
+        public ItemPanel _itemPanel;
         public PlayerController _playerController;
 
         protected override void Awake()
@@ -27,6 +28,34 @@ namespace Assets.Scripts.Manager
             _playerController = GameObject.FindAnyObjectByType<PlayerController>();
         }
 
+        #region :::: TextPanelUI
+        public void TextPanelShow()
+        {
+            _textPanel.SetActive(true);
+        }
+
+        public void TextPanelClose()
+        {
+            _textPanel.SetActive(false);
+        }
+        #endregion
+
+        #region :::: ChoosePanelUI
+        public void ChoosePanelShow(string[] _stringList, ChoosableObject _baseScript)
+        {
+
+            _choosePanel.gameObject.SetActive(true);
+            _choosePanel.SetData(_stringList, _baseScript);
+            _playerController.enabled = false;
+        }
+
+        public void ChoosePanelClose()
+        {
+            _choosePanel.gameObject.SetActive(false);
+        }
+        #endregion
+
+        #region :::: FadeInOutUI
         public void FadeInOut()
         {
             StartCoroutine(FadeCoroutine());
@@ -39,28 +68,27 @@ namespace Assets.Scripts.Manager
             _fadeImg.DOFade(0f, 2f);
             yield return new WaitForSeconds(2f);
         }
+        #endregion
+
+        #region :::: DeathUI
         public void DeathUIShow()
         {
             _deathPanel.SetActive(true);
         }
+        #endregion
 
-        public void TextPanelShow()
+        #region :::: ItemPanelUI
+        public void ItemPanelShow()
         {
-            _textPanel.SetActive(true);
+            _itemPanel.gameObject.SetActive(true);
         }
 
-        public void TextPanelClose()
+        public void ItemPanelClose()
         {
-            _textPanel.SetActive(false);
+            _itemPanel.gameObject.SetActive(false);
         }
+        #endregion
 
-        public void ChoosePanelShow(string[] _stringList, ObjectBase _baseScript)
-        {
-          
-            _choosePanel.gameObject.SetActive(true);
-            _choosePanel.SetData(_stringList, _baseScript);
-            _playerController.enabled = false;
-        }
     }
 }
 

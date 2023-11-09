@@ -12,7 +12,7 @@ public class ChoosePanel : MonoBehaviour
     [SerializeField] private TMP_Text _yesText;
     [SerializeField] private TMP_Text _noText;
 
-    private ObjectBase _objectBase;
+    private ChoosableObject _chooseableObject;
 
     private void Awake()
     {
@@ -24,18 +24,18 @@ public class ChoosePanel : MonoBehaviour
         _noText.GetComponent<Button>().onClick.AddListener(() => OnClickYesButton());
     }
 
-    public void SetData(string[] _list, ObjectBase _baseScript)
+    public void SetData(string[] _list, ChoosableObject _baseScript)
     {
         _infoText.text = _list[0];
         _yesText.text = _list[1];
         _noText.text = _list[2];
-        _objectBase = _baseScript;
+        _chooseableObject = _baseScript;
     }
 
     private void OnClickYesButton()
     {
         gameObject.SetActive(false);
-        _objectBase.ChooseButton();
+        _chooseableObject.ChooseButton();
     }
 
     private void OnClickNoButton()

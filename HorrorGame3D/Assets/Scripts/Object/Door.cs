@@ -34,6 +34,7 @@ namespace Assets.Scripts.Object
                 else
                     CloseDoor();
             }
+            _playerController.FinishInteraction();
         }
 
         public void OpenDoor()
