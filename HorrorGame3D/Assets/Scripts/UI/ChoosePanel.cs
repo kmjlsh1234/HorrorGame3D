@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UniRx;
 using Assets.Scripts.Object;
 using Assets.Scripts.Manager;
 
@@ -20,8 +21,10 @@ public class ChoosePanel : MonoBehaviour
     }
     private void AddEvent()
     {
-        _yesText.GetComponent<Button>().onClick.AddListener(() => OnClickYesButton());
-        _noText.GetComponent<Button>().onClick.AddListener(() => OnClickYesButton());
+        Button _yesButton = _yesText.GetComponent<Button>();
+        Button _noButton = _noText.GetComponent<Button>();
+        _yesButton.OnClickAsObservable().Subscribe(_ => OnClickYesButton()).AddTo(gameObject);
+        _noButton.OnClickAsObservable().Subscribe(_ => OnClickNoButton()).AddTo(gameObject);
     }
 
     public void SetData(string[] _list, ChoosableObject _baseScript)

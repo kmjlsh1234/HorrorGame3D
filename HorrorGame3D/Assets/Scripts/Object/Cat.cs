@@ -25,7 +25,7 @@ namespace Assets.Scripts.Object
 
         private void SaveData()
         {
-            //데이터 저장 기능 구현
+            CanvasManager.Instance.SavePanelShow();
         }
     }
 }

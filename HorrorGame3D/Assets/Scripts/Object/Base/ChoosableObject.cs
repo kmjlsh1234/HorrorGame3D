@@ -6,7 +6,7 @@ namespace Assets.Scripts.Object
 {
     public class ChoosableObject : ObjectBase
     {
-        [SerializeField] private string[] _chooseList;
+        [SerializeField] private string[] _chooseList = new string[3];
         public override void SetInteraction()
         {
             _playerController.StartInteraction();

@@ -22,6 +22,7 @@ namespace Assets.Scripts.Manager
         public ItemPanel _itemPanel;
         public PlayerController _playerController;
 
+       
         protected override void Awake()
         {
             base.Awake();
@@ -95,6 +96,18 @@ namespace Assets.Scripts.Manager
         public void RemoveItem(string itemName)
         {
             _itemPanel.RemoveSlot(itemName);
+        }
+        #endregion
+
+        #region :::: SavePanelUI
+        public void SavePanelShow()
+        {
+
+        }
+
+        public void SavePanelClose()
+        {
+
         }
         #endregion
 

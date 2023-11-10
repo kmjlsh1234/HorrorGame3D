@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System;
-
-public class PlayerData : MonoBehaviour
+using Assets.Scripts.Common;
+public class PlayerData
 {
-    public Vector3 _position;
-    public Vector3 _rotation;
-    public int _questNum;
-    public List<string> _itemList;
-    public DateTime _dateTime;
+    public Vector3 PlayerPosition;
+    public Quaternion PlayerRotation;
+    public QuestName QuestName;
+    public List<string> ItemList;
+    public string DateTime;
     public bool CheckItem(string item)
     {
-        string targetItem = _itemList.FirstOrDefault(x => x == item);
+        string targetItem = ItemList.FirstOrDefault(x => x == item);
         
         if (targetItem != null)
         {
             Debug.Log($"{targetItem} 사용");
-            _itemList.Remove(targetItem);
+            ItemList.Remove(targetItem);
             return true;
         } 
         else
@@ -29,9 +29,5 @@ public class PlayerData : MonoBehaviour
             
     }
 
-    public void AddItem(string item)
-    {
-        Debug.Log($"{item} 추가 완료");
-        _itemList.Add(item);
-    }
+    
 }

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 7047956730883591527}
   - component: {fileID: 7047956730882788679}
   - component: {fileID: 7047956730881691527}
-  - component: {fileID: 7047956730883625284}
+  - component: {fileID: 4827464362812343064}
+  - component: {fileID: 1945056953138437275}
   m_Layer: 0
   m_Name: Saw
   m_TagString: Untagged
@@ -84,8 +85,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7047956730883625284
-MeshCollider:
+--- !u!114 &4827464362812343064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7047956730883625287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7fc3a2a26105ce46afd797c6d3fcafd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _chooseList:
+  - "\uB179\uC774 \uC2A8 \uB0A0\uBD99\uC774\uAC00 \uB5A8\uC5B4\uC838 \uC788\uB2E4."
+  - "\uAC00\uC838\uAC04\uB2E4."
+  - "\uAC00\uC838\uAC00\uC9C0 \uC54A\uB294\uB2E4."
+--- !u!65 &1945056953138437275
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +111,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: ddb2fbf5f36dc2f45870549e7c85bc30, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.74490255, y: 0.18678819, z: 0.4046237}
+  m_Center: {x: 0.040663898, y: 0.01562938, z: -0.094976135}
