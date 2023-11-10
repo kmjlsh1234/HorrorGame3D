@@ -31,5 +31,10 @@ namespace Assets.Scripts.Common
         BGM_Wind,
         BGM_MainHouse
     }
+
+    public enum QuestName
+    {
+        
+    }
 }
 

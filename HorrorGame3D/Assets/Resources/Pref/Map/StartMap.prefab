@@ -310,6 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83558793f39197a4d88e9289b3de76a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
+  _mapType: 0
   _playerTrans: {fileID: 7248538172059799832}
   _catTrans: {fileID: 7248538171918412505}
   _sawTrans: {fileID: 7248538172797466449}

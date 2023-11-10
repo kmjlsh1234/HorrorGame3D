@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class PlayerData : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlayerData : MonoBehaviour
     public Vector3 _rotation;
     public int _questNum;
     public List<string> _itemList;
-
+    public DateTime _dateTime;
     public bool CheckItem(string item)
     {
         string targetItem = _itemList.FirstOrDefault(x => x == item);

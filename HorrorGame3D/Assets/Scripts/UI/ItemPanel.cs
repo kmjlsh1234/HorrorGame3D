@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using TMPro;
 
 namespace Assets.Scripts.UI
@@ -14,6 +15,8 @@ namespace Assets.Scripts.UI
         [SerializeField] private Button _noBtn;
         [SerializeField] private TMP_Text _yesText;
         [SerializeField] private TMP_Text _noText;
+
+        public EventTrigger ItemSlotClick;
 
         // Start is called before the first frame update
         private void Awake()
@@ -33,7 +36,12 @@ namespace Assets.Scripts.UI
             _noText.text = list[1];
         }
 
-        public void AddSlot()
+        public void AddSlot(string targetName)
+        {
+
+        }
+
+        public void RemoveSlot(string targetName)
         {
 
         }

@@ -46,7 +46,6 @@ namespace Assets.Scripts.Manager
 
             _choosePanel.gameObject.SetActive(true);
             _choosePanel.SetData(_stringList, _baseScript);
-            _playerController.enabled = false;
         }
 
         public void ChoosePanelClose()
@@ -86,6 +85,16 @@ namespace Assets.Scripts.Manager
         public void ItemPanelClose()
         {
             _itemPanel.gameObject.SetActive(false);
+        }
+
+        public void AddItem(string itemName)
+        {
+            _itemPanel.AddSlot(itemName);
+        }
+
+        public void RemoveItem(string itemName)
+        {
+            _itemPanel.RemoveSlot(itemName);
         }
         #endregion
 

@@ -9,14 +9,15 @@ namespace Assets.Scripts.Object
         private Transform _player;
         private void Awake()
         {
-            _player = MapManager.Instance.FindPlayer().transform;
+            _player = MapManager.Instance._player.transform;
         }
 
+        /*
         private void Update()
         {
             LookPlayer();
         }
-
+        */
         private void LookPlayer()
         {
             this.transform.LookAt(_player);

@@ -1857,9 +1857,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _chooseList:
-  - 1
-  - 2
-  - 3
+  - "\uC120\uBB3C \uC0C1\uC790 \uC0B0\uB354\uBBF8\uC5D0 \uD14C\uB514\uBCA0\uC5B4\uAC00
+    \uAE30\uB300\uC5B4 \uC788\uB2E4."
+  - "\uD14C\uB514\uBCA0\uC5B4\uB97C \uC90D\uB294\uB2E4."
+  - "\uC544\uBB34\uAC83\uB3C4 \uD558\uC9C0 \uC54A\uB294\uB2E4."
   _teddyBear: {fileID: 4500323194447287655}
   _anim: {fileID: 0}
 --- !u!1 &2531811232099136570
